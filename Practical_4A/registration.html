@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lavender;
+        }
+
+        form {
+            width: 400px;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        #success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">Registration Form</h1>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+        <span id="nameError" class="error"></span>
+        <br>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span id="emailError" class="error"></span>
+        <br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span id="passwordError" class="error"></span>
+        <br>
+
+        <label>Phone Number:</label>
+        <input type="text" id="phone">
+        <span id="phoneError" class="error"></span>
+        <br>
+
+        <button type="submit">Submit</button>
+
+        <p id="success"></p>
+
+    </form>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let phone = document.getElementById("phone").value;
+
+            let valid = true;
+
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+            document.getElementById("phoneError").innerHTML = "";
+            document.getElementById("success").innerHTML = "";
+
+            if (name == "") {
+                document.getElementById("nameError").innerHTML =
+                    "Please enter your name";
+                valid = false;
+            }
+
+            if (email == "" || !email.includes("@")) {
+                document.getElementById("emailError").innerHTML =
+                    "Please enter a valid email";
+                valid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerHTML =
+                    "Password must be at least 6 characters";
+                valid = false;
+            }
+
+            if (phone.length != 10 || isNaN(phone)) {
+                document.getElementById("phoneError").innerHTML =
+                    "Please enter a valid 10 digit phone number";
+                valid = false;
+            }
+
+            if (valid) {
+                document.getElementById("success").innerHTML =
+                    "Registration successful!";
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
