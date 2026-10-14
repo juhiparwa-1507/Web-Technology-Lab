@@ -1,1 +1,1 @@
-My project title is Version Control.
+My project title is Git and GitHub.
