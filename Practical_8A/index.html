@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 8A - TypeScript To-Do List</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 30px 16px;
+      font-family: Arial, sans-serif;
+      background: #eef2ff;
+      color: #1e293b;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 28px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px #00000012;
+    }
+    h1 { text-align: center; color: #4338ca; }
+    .subtitle { text-align: center; color: #64748b; }
+    .entry { display: flex; gap: 8px; margin: 24px 0; }
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      color: white;
+      background: #4f46e5;
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .task span { flex: 1; overflow-wrap: anywhere; }
+    .task.done span { text-decoration: line-through; color: #64748b; }
+    .task .delete { background: #dc2626; }
+    .stats {
+      margin: 20px 0;
+      padding: 14px;
+      border-radius: 8px;
+      background: #eef2ff;
+    }
+    #empty { text-align: center; color: #64748b; padding: 20px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>TypeScript To-Do List</h1>
+    <p class="subtitle">Web Technology Lab — Practical 8A</p>
+
+    <form class="entry" id="taskForm">
+      <input id="taskInput" placeholder="Enter a new task..." required>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="stats" id="stats">Total: 0 | Completed: 0 | Pending: 0</div>
+    <div id="taskList"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

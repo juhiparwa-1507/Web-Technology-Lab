@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const todoLogic_1 = require("./todoLogic");
+console.log("Adding tasks...");
+const task1 = (0, todoLogic_1.addTask)("Complete Practical 8");
+(0, todoLogic_1.addTask)("Study TypeScript");
+console.log("All tasks:", (0, todoLogic_1.getTasks)());
+(0, todoLogic_1.completeTask)(task1.id);
+console.log("After completing task:", (0, todoLogic_1.getTasks)());
+(0, todoLogic_1.deleteTask)(task1.id);
+console.log("After deleting task:", (0, todoLogic_1.getTasks)());
