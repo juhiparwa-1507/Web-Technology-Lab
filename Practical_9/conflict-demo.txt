@@ -1,1 +1,1 @@
-Title from Student A
+Final project title: Version Control with Git and GitHub
